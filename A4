@@ -1,1 +1,56 @@
+import random
 
+ugen = []
+
+devices = [
+"Redmi Note 10 Pro","Redmi Note 9 Pro","Redmi Note 8","Redmi Note 11","Redmi Note 12",
+"Redmi 9A","Redmi 9C","Redmi 10","Redmi 10C","Redmi 10A",
+"Redmi 12","Redmi Note 7","Redmi Note 6 Pro","Redmi Note 5","Redmi Note 4",
+"Redmi K20","Redmi K30","Redmi K40","Redmi K50","Redmi K60",
+
+"Samsung Galaxy A10","Samsung Galaxy A11","Samsung Galaxy A12","Samsung Galaxy A13",
+"Samsung Galaxy A20","Samsung Galaxy A21","Samsung Galaxy A30","Samsung Galaxy A31",
+"Samsung Galaxy A32","Samsung Galaxy A50","Samsung Galaxy A51","Samsung Galaxy A52",
+"Samsung Galaxy A53","Samsung Galaxy A70","Samsung Galaxy A71","Samsung Galaxy A72",
+"Samsung Galaxy S8","Samsung Galaxy S9","Samsung Galaxy S10","Samsung Galaxy S20",
+"Samsung Galaxy S21","Samsung Galaxy S22",
+
+"Vivo Y12","Vivo Y15","Vivo Y17","Vivo Y20","Vivo Y21",
+"Vivo Y30","Vivo Y33","Vivo Y50","Vivo Y51","Vivo Y91",
+"Vivo Y91C","Vivo Y93","Vivo Y95","Vivo V15","Vivo V17",
+"Vivo V19","Vivo V21",
+
+"Oppo A1k","Oppo A3s","Oppo A5","Oppo A5s","Oppo A7",
+"Oppo A9","Oppo A12","Oppo A15","Oppo A16","Oppo A31",
+"Oppo A52","Oppo A53","Oppo A54","Oppo A55","Oppo A57",
+"Oppo F9","Oppo F11","Oppo F15",
+
+"Infinix Hot 8","Infinix Hot 9","Infinix Hot 10","Infinix Hot 11",
+"Infinix Note 7","Infinix Note 8","Infinix Note 10","Infinix Note 11",
+"Infinix X650","Infinix X655","Infinix X680","Infinix X6811",
+
+"Realme C2","Realme C3","Realme C11","Realme C15","Realme C20",
+"Realme C21","Realme C25","Realme 5","Realme 6","Realme 7",
+"Realme 8","Realme 9","Realme Narzo 20","Realme Narzo 30"
+]
+
+def generate_ua():
+    android = random.choice(["7.0","8.1.0","9","10","11","12","13"])
+    device = random.choice(devices)
+
+    chrome_major = random.randrange(80,115)
+    chrome_build = random.randrange(4200,6000)
+    chrome_patch = random.randrange(40,200)
+
+    letter1 = random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    letter2 = random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    num = random.randrange(1,999)
+
+    ua = f"Mozilla/5.0 (Linux; Android {android}; {device} Build/{letter1}{num}{letter2}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{chrome_major}.0.{chrome_build}.{chrome_patch} Mobile Safari/537.36"
+    return ua
+
+for _ in range(100):
+    ugen.append(generate_ua())
+
+for ua in ugen:
+    print(ua)
