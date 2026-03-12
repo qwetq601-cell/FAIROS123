@@ -1,35 +1,34 @@
-import requests
-from concurrent.futures import ThreadPoolExecutor
+import asyncio
+import aiohttp
 import random
 
-url = "https://business.facebook.com/business_locations"
+url = "https://example.com/api"
 
 user_agents = [
-"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
-"Mozilla/5.0 (Linux; Android 13; Redmi Note 10 Pro) AppleWebKit/537.36 Chrome/110.0.0.0 Mobile Safari/537.36",
-"Mozilla/5.0 (Linux; Android 12; Samsung Galaxy A51) AppleWebKit/537.36 Chrome/108.0.0.0 Mobile Safari/537.36",
-"Mozilla/5.0 (Linux; Android 11; Vivo Y20) AppleWebKit/537.36 Chrome/105.0.0.0 Mobile Safari/537.36",
-"Mozilla/5.0 (Linux; Android 10; Oppo A53) AppleWebKit/537.36 Chrome/102.0.0.0 Mobile Safari/537.36"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Linux; Android 13; Redmi Note 10 Pro) AppleWebKit/537.36 Chrome/110.0.0.0 Mobile Safari/537.36",
+    "Mozilla/5.0 (Linux; Android 12; Samsung Galaxy A51) AppleWebKit/537.36 Chrome/108.0.0.0 Mobile Safari/537.36",
 ]
 
-cookies = {
-    "cookie": "PUT_YOUR_COOKIE_HERE"
-}
-
-def send_request():
+async def fetch(session):
     headers = {
-        "user-agent": random.choice(user_agents),
-        "referer": "https://www.facebook.com/",
-        "accept": "text/html"
+        "User-Agent": random.choice(user_agents),
+        "Accept": "application/json"
     }
 
     try:
-        r = requests.get(url, headers=headers, cookies=cookies, timeout=10)
-        print("Status:", r.status_code)
+        async with session.get(url, headers=headers) as response:
+            print("Status:", response.status)
+            await response.text()
     except Exception as e:
         print("Error:", e)
 
-# تشغيل 100 طلب بنفس الوقت
-with ThreadPoolExecutor(max_workers=100) as executor:
-    for _ in range(100):
-        executor.submit(send_request)
+async def main():
+    tasks = []
+    async with aiohttp.ClientSession() as session:
+        for _ in range(100):  # عدد الطلبات
+            tasks.append(fetch(session))
+
+        await asyncio.gather(*tasks)
+
+asyncio.run(main())
