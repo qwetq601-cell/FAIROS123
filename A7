@@ -1,1 +1,42 @@
+import requests
+import sys
 
+def vpn_check():
+    try:
+        services = [
+            "http://ip-api.com/json/",
+            "https://ipinfo.io/json",
+            "https://ipwho.is/"
+        ]
+
+        vpn_detected = False
+
+        for url in services:
+            try:
+                r = requests.get(url, timeout=5).json()
+
+                isp = str(r.get("isp","")) + str(r.get("org","")) + str(r.get("connection",{}))
+
+                keywords = [
+                    "vpn","proxy","hosting","digitalocean","amazon",
+                    "google","microsoft","ovh","linode","vultr"
+                ]
+
+                if any(k.lower() in isp.lower() for k in keywords):
+                    vpn_detected = True
+                    break
+
+            except:
+                pass
+
+        if not vpn_detected:
+            sys.exit()   # اغلاق الأداة مباشرة بدون طباعة شيء
+
+    except:
+        sys.exit()
+
+# الفحص يعمل بصمت
+vpn_check()
+
+# هنا يبدأ برنامجك
+print("Tool Started")
