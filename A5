@@ -1,1 +1,35 @@
+import requests
+from concurrent.futures import ThreadPoolExecutor
+import random
 
+url = "https://business.facebook.com/business_locations"
+
+user_agents = [
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
+"Mozilla/5.0 (Linux; Android 13; Redmi Note 10 Pro) AppleWebKit/537.36 Chrome/110.0.0.0 Mobile Safari/537.36",
+"Mozilla/5.0 (Linux; Android 12; Samsung Galaxy A51) AppleWebKit/537.36 Chrome/108.0.0.0 Mobile Safari/537.36",
+"Mozilla/5.0 (Linux; Android 11; Vivo Y20) AppleWebKit/537.36 Chrome/105.0.0.0 Mobile Safari/537.36",
+"Mozilla/5.0 (Linux; Android 10; Oppo A53) AppleWebKit/537.36 Chrome/102.0.0.0 Mobile Safari/537.36"
+]
+
+cookies = {
+    "cookie": "PUT_YOUR_COOKIE_HERE"
+}
+
+def send_request():
+    headers = {
+        "user-agent": random.choice(user_agents),
+        "referer": "https://www.facebook.com/",
+        "accept": "text/html"
+    }
+
+    try:
+        r = requests.get(url, headers=headers, cookies=cookies, timeout=10)
+        print("Status:", r.status_code)
+    except Exception as e:
+        print("Error:", e)
+
+# تشغيل 100 طلب بنفس الوقت
+with ThreadPoolExecutor(max_workers=100) as executor:
+    for _ in range(100):
+        executor.submit(send_request)
