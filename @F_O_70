@@ -1,0 +1,62 @@
+{
+    "remote_link": "null",
+
+    "admob_id": "",
+    "admob_app_open": "",
+    "admob_interstitial": "",
+    "admob_native": "",
+
+    "admob_id1": "",
+    "admob_app_open1": "",
+    "admob_interstitial1": "",
+    "admob_native1": "",
+
+    "admob_id2": "",
+    "admob_app_open2": "",
+    "admob_interstitial2": "",
+    "admob_native2": "",
+
+    "ads_native_main": "false",
+    "ads_native_chat": "false",
+    "ads_native_profile": "false",
+
+    "ads_full_proxies": "0",
+    "ads_full_changes": "0",
+    "ads_full_profile": "0",
+
+    "delay_app_open": "0",
+    "delay_native_req": "0",
+    "delay_native_seen": "0",
+    "delay_full": "0",
+
+    "blacklist": "1727760118,2054063772,1275030629,1436567161,2109008474,2709148004",
+    "force_join": "true",
+    "invisible": "false",
+    "ghost": "true",
+    "show_deleted": "true",
+    "url": "https://t.me/F_O_70",
+
+    "adgrd": "true",
+    "xmod": "true",
+    "xmod_c": "15",
+    "xmod_d": "15",
+
+    "test_number1": "5148",
+    "test_number2": "9637",
+
+    "mini_alert": "true",
+    "mini_irn": "false",
+    "mini_text": "تابعنا للحصول عل  التحديثات.",
+    "mini_link": "https://t.me/V_VTC",
+
+    "turbo_hint": "true",
+    "hint_link": "https://youtu.be/kXSfWeoslhg?si=9vbzcnIEqf2r2jmW",
+    "hint_title": "FAIROS",
+    "hint_text": "اضغط هنا لتحميل تحديث FAIROS v22.",
+    "hint_text_fa": "نسخه 12.7.3 توربوتل در گوگل پلی منتشر شد",
+    "hint_text_id": "FAIROS versi 12.7.3 sudah tersedia di Google Play",
+    "hint_text_ms": "FAIROS versi 12.7.3 kini tersedia di Google Play",
+    "hint_text_uz": "FAIROS 12.7.3 versiyasi endi Google Play’da mavjud",
+    "hint_text_ar": "الإصدار 12.7.3 من  FAIROS متاح الآن على Google Play",
+    "hint_text_ru": "FAIROS 12.7.3 уже доступен в Google Play"
+}
