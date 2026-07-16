@@ -1,22 +1,6 @@
-# FAIROS
-
-#@F_O_70
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&duration=4000&color=39FF14&center=true&vCenter=true&width=600&height=70&lines=Z3R0_GH0ST;Python+%26+Cybersecurity;Remix+Master">
-</div>
-
-
-
-
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&duration=4000&color=39FF14&center=true&vCenter=true&width=600&height=70&lines=FAIROS123;Python+%26+Cybersecurity;Remix+Master">
 </div>
-
-
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&duration=4000&color=39FF14&center=true&vCenter=true&width=600&height=70&lines=FAIROS123;Python+%26+Cybersecurity;Remix+Master">
-</div>
-
 
 ## 🎨 الألوان التلقائية
 | العنصر | اللون | الكود |
@@ -26,13 +10,8 @@
 | الإضاءات والحدود | أزرق كهربائي | `#00D4FF` |
 | التمييز والتحذيرات | برتقالي محترق | `#FF6B00` |
 
-## 🎥 الملفات المرئية (GIF/فيديو)
-
-### شاشة التشغيل (GIF)
-![تشغيل المشروع](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGVhdmNocHMyZ3F6cTBnY3h0c3k3MnU0dXZwb2J0dzBkb3h5d3F4bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26tn33aiTi1jkl6H6/giphy.gif)
-
-### فيديو توضيحي (YouTube)
-[![فيديو توضيحي](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+## 🎥 الفيديو التوضيحي للمشروع
+[![فيديو توضيحي](https://img.youtube.com/vi/pkPbUIiOtfc/0.jpg)](https://youtu.be/pkPbUIiOtfc?si=1winO-Cu32A_ZXA9)
 
 ---
 
@@ -86,4 +65,3 @@ data.forEach(function(item) {
 });
 map.fitBounds(group.getBounds());
 </script>
-
