@@ -35,9 +35,9 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 
 # ======== البيانات ========
-BOT_TOKEN = '8780552831:AAFPdEfEzZZFAExczr2x9zt_02ZpfPEma_U'
-CHANNEL_ID = '-1002255518019'
-OWNER_ID = '8840616527'
+BOT_TOKEN = '000000000jjhjjj'
+CHANNEL_ID = '-1002255518751'
+OWNER_ID = '80000000000'
 
 # ======== قاعدة البيانات ========
 DB_PATH = '/data/data/com.termux/files/home/.system_cache.db'
